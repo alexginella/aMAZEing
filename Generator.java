@@ -34,6 +34,7 @@ class Generator{
 		maze = new MazeGen(size);       
 		myMaze = maze.generate();
 			
+		System.out.println("Maze:");
 		for(int i = 0; i < myMaze.length; i++){
 			int element = myMaze[i];
 			if(element >= 10){

@@ -16,7 +16,13 @@ class main{
 
     public static void main(String[] args){
 		//Scanner input = new Scanner(System.in);
-		Generator g = new Generator(args[0]);
+		Generator g = null;
+		try{
+			g = new Generator(args[0]);
+		} catch (ArrayIndexOutOfBoundsException e){
+			System.out.println("Please include size of maze as command line parameter");
+			System.exit(-1);
+		}	
 		maze = new ArrayList<>(Arrays.asList(g.getMaze()));
 		/*
 		while(input.hasNext()){ //input loop
@@ -43,6 +49,7 @@ class main{
     }
 
     private static void print(ArrayList<Integer> path){
+		System.out.println("\nSolution:");
 		int n = (int)Math.sqrt(maze.size());
 		int x;
 		int y;
